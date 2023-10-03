@@ -1,0 +1,7 @@
+{
+  "name": "mula",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
