@@ -1,31 +1,53 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
 import TabsPage from '../views/TabsPage.vue'
+import SplashPage from '@/views/SplashPage.vue';
+import LoginPage from '@/views/LoginPage.vue';
+import SignUpPage from '@/views/SignUpPage.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/tabs/tab1'
+    redirect: '/splashscreen'
   },
   {
-    path: '/tabs/',
+    path: '/splashscreen',
+    name:'SplashPage',
+    component: SplashPage
+  },
+  {
+    path: '/loginpage',
+    name:'loginPage',
+    component: LoginPage
+  },
+  {
+    path: '/signuppage',
+    name:'signupPage',
+    component: SignUpPage
+  },
+  {
+    path: '/tabs',
     component: TabsPage,
     children: [
       {
         path: '',
-        redirect: '/tabs/tab1'
+        redirect: '/dashboard'
       },
       {
-        path: 'tab1',
-        component: () => import('@/views/Tab1Page.vue')
+        path: '/dashboard',
+        component: () => import('@/views/Dashboard.vue')
       },
       {
-        path: 'tab2',
-        component: () => import('@/views/Tab2Page.vue')
+        path: '/transactions',
+        component: () => import('@/views/Transactions.vue')
       },
       {
-        path: 'tab3',
-        component: () => import('@/views/Tab3Page.vue')
+        path: '/settings',
+        component: () => import('@/views/Settings.vue')
+      },
+      {
+        path: '/accounts',
+        component: () => import('@/views/AccountsPage.vue')
       }
     ]
   }

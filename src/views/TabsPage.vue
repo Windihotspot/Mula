@@ -3,26 +3,48 @@
     <ion-tabs>
       <ion-router-outlet></ion-router-outlet>
       <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="tab1" href="/tabs/tab1">
-          <ion-icon aria-hidden="true" :icon="triangle" />
-          <ion-label>Tab 1</ion-label>
+        <ion-tab-button tab="dashboard" href="/dashboard">
+          <ion-icon aria-hidden="true" :icon="homeOutline"></ion-icon>
+          <ion-label>Home</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="tab2" href="/tabs/tab2">
-          <ion-icon aria-hidden="true" :icon="ellipse" />
-          <ion-label>Tab 2</ion-label>
+        <ion-tab-button tab="transactions" href="/transactions">
+          <ion-icon aria-hidden="true" :icon="documentTextOutline" />
+          <ion-label>Transactions</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="tab3" href="/tabs/tab3">
-          <ion-icon aria-hidden="true" :icon="square" />
-          <ion-label>Tab 3</ion-label>
+        <ion-tab-button tab="settings" href="/settings">
+          <ion-icon aria-hidden="true" :icon="settingsOutline" />
+          <ion-label>Settings</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="accounts" href="/accounts">
+          <ion-icon aria-hidden="true" :icon="personOutline" />
+          <ion-label>Account</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
-    </ion-tabs>
+    </ion-tabs> 
+    6
   </ion-page>
 </template>
 
-<script setup lang="ts">
-import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
-import { ellipse, square, triangle } from 'ionicons/icons';
+<script lang="ts">
+import { IonTabBar, IonTitle, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
+import { personOutline,homeOutline,documentTextOutline, settingsOutline, } from 'ionicons/icons';
+import {defineComponent} from "vue";
+
+export default defineComponent({
+ name:'tabspage',
+ components: {
+  IonTabBar, IonTitle, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet
+ },
+ setup() {
+
+
+
+  return{
+  personOutline, homeOutline, documentTextOutline, settingsOutline,personOutline
+  }
+ }
+
+})
 </script>
